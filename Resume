@@ -1,7 +1,10 @@
-<!DOCTYPE html>
+git clone https://github.com/your-username/resume.git
+cd resume
+echo '<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aastha Rai - Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -9,8 +12,8 @@
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to bottom, #dfefff, #ffffff);
       background-image: radial-gradient(circle at 20% 30%, #ffffff 20%, transparent 25%),
-                        radial-gradient(circle at 80% 40%, #ffffff 20%, transparent 25%),
-                        radial-gradient(circle at 50% 80%, #ffffff 20%, transparent 25%);
+                      radial-gradient(circle at 80% 40%, #ffffff 20%, transparent 25%),
+                      radial-gradient(circle at 50% 80%, #ffffff 20%, transparent 25%);
       background-size: cover;
       margin: 0;
       padding: 40px 20px;
@@ -147,7 +150,7 @@
       <ul>
         <li>Founded and led Burhanpur's first interschool MUN, serving as Secretary General at MVMUN 2023.</li>
         <li>Won Best Delegate at IIMUN (TRAI Committee) and Schoolhouse MUN (UN Women).</li>
-        <li>Chairperson for CBSE Committee at MVMUN’s Aarambh event.</li>
+        <li>Chairperson for CBSE Committee at MVMUN's Aarambh event.</li>
         <li>Ranked 1st in Madhya Pradesh at Innoventure India (Entrepreneurship Challenge, 2019).</li>
         <li>National Finalist at Wiz National Spell Bee.</li>
       </ul>
@@ -180,4 +183,7 @@
     window.addEventListener('load', handleScroll);
   </script>
 </body>
-</html>
+</html>>' > index.html
+git add index.html
+git commit -m "Add resume"
+git push
