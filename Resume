@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aastha Rai - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #dfefff, #ffffff);
+      background-image: radial-gradient(circle at 20% 30%, #ffffff 20%, transparent 25%),
+                        radial-gradient(circle at 80% 40%, #ffffff 20%, transparent 25%),
+                        radial-gradient(circle at 50% 80%, #ffffff 20%, transparent 25%);
+      background-size: cover;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .name {
+      font-size: 36px;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .subheading {
+      font-size: 18px;
+      color: #555;
+      margin-top: 8px;
+    }
+    .email {
+      font-size: 16px;
+      color: #0077b6;
+      margin-top: 5px;
+    }
+    .cloud {
+      background: #ffffffee;
+      padding: 30px;
+      border-radius: 100px 100px 60px 60px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      position: relative;
+      opacity: 0;
+      transform: translateX(0);
+      transition: all 1s ease-out;
+    }
+    .cloud.slide-in-left {
+      transform: translateX(-100px);
+    }
+    .cloud.slide-in-right {
+      transform: translateX(100px);
+    }
+    .cloud.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .cloud::before, .cloud::after {
+      content: '';
+      position: absolute;
+      background: #ffffffee;
+      border-radius: 50%;
+      z-index: -1;
+    }
+    .cloud::before {
+      width: 100px;
+      height: 100px;
+      top: -40px;
+      left: 40px;
+    }
+    .cloud::after {
+      width: 120px;
+      height: 120px;
+      top: -50px;
+      right: 40px;
+    }
+    h2 {
+      color: #0077b6;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 8px 0;
+    }
+    @media (max-width: 600px) {
+      .cloud {
+        padding: 20px;
+        border-radius: 60px;
+      }
+      .cloud::before, .cloud::after {
+        display: none;
+      }
+      .name {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+    }
+    .pink-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="name">Aastha Rai</div>
+      <div class="subheading">BBA First Year – IIM Bangalore</div>
+      <div class="email">📧 <a href="mailto:aasthar249@gmail.com" style="color:#0077b6; text-decoration:none;">aasthar249@gmail.com</a></div>
+    </header>
+
+    <div class="cloud slide-in-left">
+      <h2>Educational Qualifications</h2>
+      <p><strong>BBA (First Year):</strong> IIM Bangalore</p>
+      <p><strong>Class 12:</strong> 84% – Macro Vision Academy</p>
+      <p><strong>Class 10:</strong> 96.4% – Macro Vision Academy</p>
+    </div>
+
+    <div class="cloud slide-in-right">
+      <h2>Professional Experience</h2>
+      <ul>
+        <li><strong>Social Media & Marketing Intern</strong> – Aryavart Pre-Primary & Primary School<br>
+            Developed branding content and led digital engagement campaigns for educational initiatives.</li>
+        <li><strong>Women's Awareness Campaign Organizer</strong> – Women's Day Events (3 years in a row)<br>
+            Successfully led community outreach campaigns focusing on education, rights, and empowerment for women.</li>
+      </ul>
+    </div>
+
+    <div class="cloud slide-in-left">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Founded and led Burhanpur's first interschool MUN, serving as Secretary General at MVMUN 2023.</li>
+        <li>Won Best Delegate at IIMUN (TRAI Committee) and Schoolhouse MUN (UN Women).</li>
+        <li>Chairperson for CBSE Committee at MVMUN’s Aarambh event.</li>
+        <li>Ranked 1st in Madhya Pradesh at Innoventure India (Entrepreneurship Challenge, 2019).</li>
+        <li>National Finalist at Wiz National Spell Bee.</li>
+      </ul>
+    </div>
+
+    <div class="cloud slide-in-right">
+      <h2>Skills</h2>
+      <ul>
+        <li>Canva Design & Branding</li>
+        <li>Video Editing</li>
+        <li>Social Media Marketing</li>
+        <li>Leadership & Event Organization<span class="pink-dot"></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const clouds = document.querySelectorAll('.cloud');
+
+    function handleScroll() {
+      clouds.forEach(cloud => {
+        const rect = cloud.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          cloud.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
+  </script>
+</body>
+</html>
